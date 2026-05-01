@@ -12,15 +12,67 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  height: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.invite-open-enter {
+  animation: inviteOpenReveal 5000ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, filter;
+}
+
+
+@keyframes inviteOpenReveal {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 18px, 0);
+    filter: blur(0.8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+
+[data-taos].taos-init {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  filter: blur(0.4px);
+  transition-property: opacity, transform, filter;
+  transition-duration: 4000ms;
+  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+[data-taos='fade-up'].taos-init {
+  transform: translate3d(0, 18px, 0);
+}
+
+[data-taos].taos-init.taos-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+[data-zoom-image] {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-taos].taos-init {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
 }
