@@ -13,6 +13,7 @@ import WeedingGift from '../components/WeedingGift';
 import WeddingWishes from '../components/WeddingWishes';
 import ClosingPage from '../components/ClosingPage';
 import ScrollAnimations from '../components/ScrollAnimations';
+import BackgroundMusic from '../components/BackgroundMusic';
 
 function HomeContent() {
   const searchParams = useSearchParams();
@@ -58,6 +59,7 @@ function HomeContent() {
 
   return (
     <main className="w-full flex flex-col items-center px-0 sm:px-4 py-0 overflow-visible bg-white">
+      <BackgroundMusic active={true} />
       <Header onOpenInvitation={handleOpenInvitation} guestName={guestName} />
       
       {isOpened && (
