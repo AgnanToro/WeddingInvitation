@@ -54,7 +54,7 @@ export default function Header({ onOpenInvitation, guestName }: HeaderProps) {
           </div>
 
           {/* Bottom */}
-          <div className="w-full space-y-3 -translate-y-8 sm:-translate-y-12">
+          <div className="w-full space-y-5 -translate-y-16 sm:-translate-y-20">
             <p className={`${robotoFont.className} hero-enter hero-enter-4 text-[#f3ead5] text-sm font-medium drop-shadow-lg`}>
               Kepada Yth. Bapak/Ibu/Saudara/i
             </p>
