@@ -59,11 +59,11 @@ function HomeContent() {
 
   return (
     <main className="w-full flex flex-col items-center px-0 sm:px-4 py-0 overflow-visible bg-white">
-      <BackgroundMusic active={true} />
       <Header onOpenInvitation={handleOpenInvitation} guestName={guestName} />
       
       {isOpened && (
         <div ref={openingRef} className="invitation-flow invite-open-enter w-full bg-white">
+          <BackgroundMusic active={isOpened} />
           <ScrollAnimations active={isOpened} />
 
           <div data-scroll-section data-motion="lift-merge">
