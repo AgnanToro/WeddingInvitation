@@ -56,14 +56,14 @@ export default function ScrollAnimations({ active }: ScrollAnimationsProps) {
           const playNow = shouldPlayImmediately(target);
 
           const offsetScale = isLiteMode ? 0.45 : 1;
-          const textLimit = isLiteMode ? 4 : 10;
-          const cardLimit = isLiteMode ? 5 : 14;
-          const textDuration = isLiteMode ? 0.65 : 1.05;
-          const cardDuration = isLiteMode ? 0.7 : 1.1;
-          const textStagger = isLiteMode ? 0.06 : 0.1;
-          const cardStagger = isLiteMode ? 0.05 : 0.08;
-          const triggerStartText = isLiteMode ? 'top 88%' : 'top 83%';
-          const triggerStartCard = isLiteMode ? 'top 90%' : 'top 86%';
+          const textLimit = isLiteMode ? 60 : 20;
+          const cardLimit = isLiteMode ? 30 : 16;
+          const textDuration = isLiteMode ? 0.55 : 1.05;
+          const cardDuration = isLiteMode ? 0.6 : 1.1;
+          const textStagger = isLiteMode ? 0.04 : 0.1;
+          const cardStagger = isLiteMode ? 0.04 : 0.08;
+          const triggerStartText = isLiteMode ? 'top 98%' : 'top 92%';
+          const triggerStartCard = isLiteMode ? 'top 98%' : 'top 94%';
 
           const textTargets = Array.from(target.querySelectorAll<HTMLElement>('h1, h2, h3, p')).slice(0, textLimit);
           if (textTargets.length > 0) {
