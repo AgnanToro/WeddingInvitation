@@ -44,8 +44,8 @@ export default function CoupleStory() {
 
           <div className="pt-5 ml-2 sm:ml-4 text-[#5c6068]" style={{ maxWidth: '300px' }}>
             <h3 className={`${displayFont.className} text-[2.4rem] sm:text-[2.7rem] font-medium leading-[0.96]`}>Abdul Azis</h3>
-            <p className={`${displayFont.className} mt-5 text-[1.45rem] sm:text-[1.55rem] font-medium italic leading-none text-[#6f7178]`}>Putra dari</p>
-            <p className={`${displayFont.className} mt-1 text-[1.2rem] sm:text-[1.3rem] font-medium italic leading-none text-[#6f7178]`}>Bpk Mustadi & Ibu Karniah</p>
+            <p className={`${displayFont.className} mt-5 text-[1.45rem] sm:text-[1.55rem] font-medium italic leading-none text-[#6f7178]`}>Putra ke - 3 dari</p>
+            <p className={`${displayFont.className} mt-1 text-[1.2rem] sm:text-[1.3rem] font-medium italic leading-none text-[#6f7178]`}>Bpk. Mustadi & Ibu Karniah</p>
             <a
               href="https://www.instagram.com/azisabdul06/"
               target="_blank"
@@ -95,8 +95,8 @@ export default function CoupleStory() {
 
           <div className="pt-5 ml-auto mr-2 sm:mr-4 text-right text-[#5c6068]" style={{ maxWidth: '300px' }}>
             <h3 className={`${displayFont.className} text-[2.4rem] sm:text-[2.7rem] font-medium leading-[0.96]`}>Nurfi Laeli</h3>
-            <p className={`${displayFont.className} mt-5 text-[1.45rem] sm:text-[1.55rem] font-medium italic leading-none text-[#6f7178]`}>Putri dari</p>
-            <p className={`${displayFont.className} mt-1 text-[1.2rem] sm:text-[1.3rem] font-medium italic leading-none text-[#6f7178]`}>Bpk Fulan & Ibu Fulanah</p>
+            <p className={`${displayFont.className} mt-5 text-[1.45rem] sm:text-[1.55rem] font-medium italic leading-none text-[#6f7178]`}>Putri ke - 2 dari</p>
+            <p className={`${displayFont.className} mt-1 text-[1.2rem] sm:text-[1.3rem] font-medium italic leading-none text-[#6f7178]`}>Bpk. Taryono  & Ibu Waskinah</p>
             <a
               href="https://www.instagram.com/amalia.nurfi/"
               target="_blank"

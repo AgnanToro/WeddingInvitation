@@ -38,7 +38,7 @@ const events: EventCardData[] = [
     dateLine: '26 Mei 2026',
     timeLine: 'Pukul : 09.00 WIB - Selesai',
     venueLine: 'Kediaman Mempelai Wanita',
-    addressLine: 'DUSUN 03 Jl. Desa Sumber Lor Kec. Babakan Kab.Cirebon',
+    addressLine: 'Blok Karang Desa Sumber Lor Kec. Babakan Kab.Cirebon',
     mapsUrl: 'https://www.google.com/maps?q=-6.8754898,108.7331113',
   },
   {
@@ -50,7 +50,7 @@ const events: EventCardData[] = [
     dateLine: '26 Mei 2026',
     timeLine: 'Pukul : 10.00 WIB - Selesai',
     venueLine: 'Kediaman Mempelai Wanita',
-    addressLine: 'DUSUN 03 Jl. Desa Sumber Lor Kec. Babakan Kab.Cirebon',
+    addressLine: 'Blok Karang Anyar Desa Sumber Lor Kec. Babakan Kab.Cirebon',
     mapsUrl: 'https://www.google.com/maps?q=-6.8754898,108.7331113',
   },
 ];
