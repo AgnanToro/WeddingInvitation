@@ -46,7 +46,7 @@ export default function Header({ onOpenInvitation, guestName }: HeaderProps) {
               The Wedding Of
             </p>
             <h1 className={`${heroFont.className} hero-enter hero-enter-2 text-4xl sm:text-6xl font-semibold text-[#fff8ec] drop-shadow-2xl tracking-normal leading-[0.95]`}>
-              Azis & Leli
+              Azis & Laeli
             </h1>
             <p className={`${heroFont.className} hero-enter hero-enter-3 text-[#f3ead5] text-lg sm:text-2xl font-medium drop-shadow-lg leading-none`}>
              Selasa, 26 Mei 2026
@@ -143,11 +143,11 @@ export default function Header({ onOpenInvitation, guestName }: HeaderProps) {
         }
 
         .hero-pane-1 {
-          background-image: url('/couple-header.png');
+          background-image: url('/couple-header.webp');
         }
 
         .hero-pane-2 {
-          background-image: url('/couple-header2.png');
+          background-image: url('/couple-header2.webp');
         }
 
         @keyframes heroTrackSlide {

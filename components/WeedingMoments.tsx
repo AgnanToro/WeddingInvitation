@@ -19,14 +19,14 @@ const quoteFont = Cormorant_Garamond({
 });
 
 const galleryItems = [
-  { src: '/halaman3-2.png', alt: 'Portrait pasangan di jalan', ratio: 'aspect-[4/5]' },
-  { src: '/halaman3-3.png', alt: 'Pasangan berdiri bersama', ratio: 'aspect-[4/5]' },
-  { src: '/halaman2-1.png', alt: 'Pasangan di area hutan pinus', ratio: 'aspect-[4/5]' },
-  { src: '/halaman2-2.png', alt: 'Detail tangan cincin pasangan', ratio: 'aspect-[4/5]' },
-  { src: '/halaman3-4.png', alt: 'Pasangan bersepeda', ratio: 'aspect-[16/10]' },
-  { src: '/halaman2-3.png', alt: 'Momen candid pasangan', ratio: 'aspect-[4/5]' },
-  { src: '/halaman3-1.png', alt: 'Momen dekorasi pernikahan', ratio: 'aspect-[4/5]' },
-  { src: '/halaman3-3.png', alt: 'Pasangan berjalan bersama', ratio: 'aspect-[16/10]' },
+  { src: '/halaman3-2.webp', alt: 'Portrait pasangan di jalan', ratio: 'aspect-[4/5]' },
+  { src: '/halaman3-3.webp', alt: 'Pasangan berdiri bersama', ratio: 'aspect-[4/5]' },
+  { src: '/halaman2-1.webp', alt: 'Pasangan di area hutan pinus', ratio: 'aspect-[4/5]' },
+  { src: '/halaman2-2.webp', alt: 'Detail tangan cincin pasangan', ratio: 'aspect-[4/5]' },
+  { src: '/halaman3-4.webp', alt: 'Pasangan bersepeda', ratio: 'aspect-[16/10]' },
+  { src: '/halaman2-3.webp', alt: 'Momen candid pasangan', ratio: 'aspect-[4/5]' },
+  { src: '/halaman3-1.webp', alt: 'Momen dekorasi pernikahan', ratio: 'aspect-[4/5]' },
+  { src: '/halaman3-3.webp', alt: 'Pasangan berjalan bersama', ratio: 'aspect-[16/10]' },
 ];
 
 export default function EventDetails() {
@@ -52,7 +52,7 @@ export default function EventDetails() {
           <figure className="overflow-hidden rounded-xs">
             <div className="relative aspect-video w-full" data-zoom-image>
               <Image
-                src="/halaman3-1.png"
+                src="/halaman3-1.webp"
                 alt="Galeri utama wedding"
                 fill
                 className="object-cover"
@@ -66,7 +66,7 @@ export default function EventDetails() {
             <figure className="overflow-hidden rounded-md">
               <div className="relative aspect-4/5 w-full">
                 <Image
-                  src="/halaman3-2.png"
+                  src="/halaman3-2.webp"
                   alt="Pasangan berdiri di jalan"
                   fill
                   className="object-cover"
@@ -77,7 +77,7 @@ export default function EventDetails() {
             <figure className="overflow-hidden rounded-md">
               <div className="relative aspect-4/5 w-full">
                 <Image
-                  src="/halaman3-3.png"
+                  src="/halaman3-3.webp"
                   alt="Pasangan berpose santai"
                   fill
                   className="object-cover"

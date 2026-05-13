@@ -38,7 +38,7 @@ const accounts: GiftAccount[] = [
     holder: 'Kondanganmu ID',
     number: '081219108932',
     // Simpan file logo di /public lalu isi path berikut
-    logoSrc: '/logo-bca.png',
+    logoSrc: '/logo-bca.webp',
     logoAlt: 'Logo BCA',
     copyLabel: 'SALIN',
   },
@@ -48,7 +48,7 @@ const accounts: GiftAccount[] = [
     bank: 'BANK BRI',
     holder: 'Kondanganmu ID',
     number: '123456',
-    logoSrc: '/logo-bri.png',
+    logoSrc: '/logo-bri.webp',
     logoAlt: 'Logo BRI',
     copyLabel: 'SALIN',
   },
@@ -224,7 +224,7 @@ export default function WeddingGift() {
           }
 
           .gift-pane-1 {
-            background-image: url('/halaman3-2.png');
+            background-image: url('/halaman3-2.webp');
           }
 
         `}</style>

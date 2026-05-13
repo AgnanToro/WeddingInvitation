@@ -30,7 +30,7 @@ export default function ClosingPage() {
 					<div
 						className="h-[56vh] min-h-100 w-full bg-cover bg-center"
 						data-zoom-image
-						style={{ backgroundImage: "url('/halaman3-3.png')", backgroundPosition: 'center 46%' }}
+						style={{ backgroundImage: "url('/halaman3-3.webp')", backgroundPosition: 'center 46%' }}
 						aria-hidden
 					/>
 					<div className="absolute inset-0 bg-[#121212]/36" aria-hidden />
@@ -40,7 +40,12 @@ export default function ClosingPage() {
 							KAMI YANG BERBAHAGIA
 						</p>
 						<h2 className={`${titleFont.className} mt-3 text-[2.45rem] font-semibold leading-none text-[#f7f4ee] drop-shadow-lg sm:text-[3rem]`}>
-							Azis & Leli
+							Abdul Azis 
+							<br></br>
+							 &
+							 
+							 <br></br>
+							 Nurfi Laeli
 						</h2>
 						<p className={`${serifFont.className} mt-5 max-w-135 text-[1.65rem] font-semibold italic leading-[1.02] text-[#f5efe2] drop-shadow-md sm:text-[1.2rem]`}>
 							Atas kehadiran dan doa restunya kami ucapkan <br></br>terima kasih

@@ -23,7 +23,7 @@ export default function CoupleStory() {
           style={{ maxWidth: '600px' }}
         >
           <p
-            className={`${displayFont.className} absolute right-0 sm:-right-2 top-1/3 -translate-y-1/2 text-[2rem] sm:text-[3rem] font-semibold tracking-[0.08em] leading-none`}
+            className={`${displayFont.className} absolute -right-2 sm:-right-3 top-1/7 -translate-y-1/2 text-[2rem] sm:text-[3rem] font-semibold tracking-[0.08em] leading-none`}
             style={{ writingMode: 'vertical-rl', color: accentColor }}
           >
             THE GROOM
@@ -43,11 +43,11 @@ export default function CoupleStory() {
           </div>
 
           <div className="pt-5 ml-2 sm:ml-4 text-[#5c6068]" style={{ maxWidth: '300px' }}>
-            <h3 className={`${displayFont.className} text-[2.4rem] sm:text-[2.7rem] font-medium leading-[0.96]`}>Putra Setiawan</h3>
+            <h3 className={`${displayFont.className} text-[2.4rem] sm:text-[2.7rem] font-medium leading-[0.96]`}>Abdul Azis</h3>
             <p className={`${displayFont.className} mt-5 text-[1.45rem] sm:text-[1.55rem] font-medium italic leading-none text-[#6f7178]`}>Putra dari</p>
-            <p className={`${displayFont.className} mt-1 text-[1.2rem] sm:text-[1.3rem] font-medium italic leading-none text-[#6f7178]`}>Bpk Fulan & Ibu Fulanah</p>
+            <p className={`${displayFont.className} mt-1 text-[1.2rem] sm:text-[1.3rem] font-medium italic leading-none text-[#6f7178]`}>Bpk Mustadi & Ibu Karniah</p>
             <a
-              href="https://instagram.com/putraa123"
+              href="https://www.instagram.com/azisabdul06/"
               target="_blank"
               rel="noreferrer"
               className="mt-5 inline-flex items-center gap-2.5 rounded-xl px-5 py-2 text-sm text-[#4b3a1f] font-semibold tracking-[0.12em] shadow-[0_8px_18px_rgba(120,95,45,0.28)]"
@@ -64,7 +64,7 @@ export default function CoupleStory() {
                 <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
                 <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" />
               </svg>
-              putraa123
+              Abdul Azis
             </a>
           </div>
         </article>
@@ -94,11 +94,11 @@ export default function CoupleStory() {
           </div>
 
           <div className="pt-5 ml-auto mr-2 sm:mr-4 text-right text-[#5c6068]" style={{ maxWidth: '300px' }}>
-            <h3 className={`${displayFont.className} text-[2.4rem] sm:text-[2.7rem] font-medium leading-[0.96]`}>Putri Pratiwi</h3>
+            <h3 className={`${displayFont.className} text-[2.4rem] sm:text-[2.7rem] font-medium leading-[0.96]`}>Nurfi Laeli</h3>
             <p className={`${displayFont.className} mt-5 text-[1.45rem] sm:text-[1.55rem] font-medium italic leading-none text-[#6f7178]`}>Putri dari</p>
             <p className={`${displayFont.className} mt-1 text-[1.2rem] sm:text-[1.3rem] font-medium italic leading-none text-[#6f7178]`}>Bpk Fulan & Ibu Fulanah</p>
             <a
-              href="https://instagram.com/putriii123"
+              href="https://www.instagram.com/amalia.nurfi/"
               target="_blank"
               rel="noreferrer"
               className="mt-5 inline-flex items-center gap-2.5 rounded-xl px-5 py-2 text-sm text-[#4b3a1f] font-semibold tracking-[0.12em] shadow-[0_8px_18px_rgba(120,95,45,0.28)]"
@@ -115,7 +115,7 @@ export default function CoupleStory() {
                 <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
                 <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" />
               </svg>
-              putriii123
+              Nurfi Laeli
             </a>
           </div>
         </article>
@@ -157,19 +157,19 @@ export default function CoupleStory() {
         }
 
         .photo-pane-groom-1 {
-          background-image: url('/halaman2-1.png');
+          background-image: url('/halaman2-1.webp');
         }
 
         .photo-pane-groom-2 {
-          background-image: url('/halaman2-3.png');
+          background-image: url('/halaman2-3.webp');
         }
 
         .photo-pane-bride-1 {
-          background-image: url('/halaman2-2.png');
+          background-image: url('/halaman2-2.webp');
         }
 
         .photo-pane-bride-2 {
-          background-image: url('/halaman2-3.png');
+          background-image: url('/halaman2-3.webp');
         }
 
         @keyframes photoTrackLeft {

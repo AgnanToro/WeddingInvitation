@@ -35,11 +35,11 @@ const events: EventCardData[] = [
     sidebarPosition: 'left',
     slideDirection: 'left',
     dayName: 'Sabtu',
-    dateLine: '4 Mei 2024',
-    timeLine: 'Pukul : 10.00 WITA - Selesai',
-    venueLine: 'Kediaman Mempelai Perempuan',
+    dateLine: '26 Mei 2026',
+    timeLine: 'Pukul : 09.00 WIB - Selesai',
+    venueLine: 'Kediaman Mempelai Wanita',
     addressLine: 'DUSUN 03 Jl. Desa Sumber Lor Kec. Babakan Kab.Cirebon',
-    mapsUrl: 'https://maps.google.com',
+    mapsUrl: 'https://www.google.com/maps?q=-6.8754898,108.7331113',
   },
   {
     id: 'resepsi',
@@ -47,11 +47,11 @@ const events: EventCardData[] = [
     sidebarPosition: 'right',
     slideDirection: 'right',
     dayName: 'Sabtu',
-    dateLine: '4 Mei 2024',
-    timeLine: 'Pukul : 12.30 - Selesai',
-    venueLine: 'Kediaman Mempelai Perempuan',
+    dateLine: '26 Mei 2026',
+    timeLine: 'Pukul : 10.00 WIB - Selesai',
+    venueLine: 'Kediaman Mempelai Wanita',
     addressLine: 'DUSUN 03 Jl. Desa Sumber Lor Kec. Babakan Kab.Cirebon',
-    mapsUrl: 'https://maps.google.com',
+    mapsUrl: 'https://www.google.com/maps?q=-6.8754898,108.7331113',
   },
 ];
 
@@ -195,19 +195,19 @@ function EventCard({ data }: { data: EventCardData }) {
         }
 
         .event-pane-akad-1 {
-          background-image: url('/halaman3-1.png');
+          background-image: url('/halaman3-1.webp');
         }
 
         .event-pane-akad-2 {
-          background-image: url('/halaman3-2.png');
+          background-image: url('/halaman3-2.webp');
         }
 
         .event-pane-resepsi-1 {
-          background-image: url('/halaman3-3.png');
+          background-image: url('/halaman3-3.webp');
         }
 
         .event-pane-resepsi-2 {
-          background-image: url('/halaman3-4.png');
+          background-image: url('/halaman3-4.webp');
         }
 
         .event-photo-track-left {

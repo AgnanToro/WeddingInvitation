@@ -95,7 +95,7 @@ export default function Opening() {
             <div className="w-full max-w-lg space-y-5">
               <div className="text-center space-y-2">
                 <h2 className={`${scriptFont.className} text-[3rem] sm:text-[4.4rem] text-[#fff8eb] drop-shadow-2xl leading-none`}>
-                  Azis & Leli
+                  Azis & Laeli
                 </h2>
                 <p className={`${bodyFont.className} text-[1.35rem] sm:text-[1.7rem] font-semibold text-[#fff0cf] drop-shadow-2xl leading-tight tracking-[0.03em]`}>
                   Selasa, 26 Mei 2026
@@ -174,17 +174,17 @@ export default function Opening() {
         }
 
         .opening-bg-1 {
-          background-image: url('/halaman2-1.png');
+          background-image: url('/halaman2-1.webp');
           animation: intro1 18s ease-in-out infinite;
         }
 
         .opening-bg-2 {
-          background-image: url('/halaman2-2.png');
+          background-image: url('/halaman2-2.webp');
           animation: intro2 18s ease-in-out infinite;
         }
 
         .opening-bg-3 {
-          background-image: url('/halaman2-3.png');
+          background-image: url('/halaman2-3.webp');
           animation: intro3 18s ease-in-out infinite;
         }
 
