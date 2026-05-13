@@ -65,92 +65,65 @@ export default function ScrollAnimations({ active }: ScrollAnimationsProps) {
           const triggerStartText = isLiteMode ? 'top 88%' : 'top 83%';
           const triggerStartCard = isLiteMode ? 'top 90%' : 'top 86%';
 
-          gsap.fromTo(
-            target,
-            {
-              autoAlpha: 0,
-              x: variant.sectionX * offsetScale,
-              y: variant.sectionY * offsetScale,
-            },
-            {
-              autoAlpha: 1,
-              x: 0,
-              y: 0,
-              duration: isLiteMode ? 0.6 : 0.9,
-              ease: 'power2.out',
-              ...(playNow
-                ? {}
-                : {
-                    scrollTrigger: {
-                      trigger: target,
-                      start: 'top 88%',
-                      once: true,
-                    },
-                  }),
-            }
-          );
+          const textTargets = Array.from(target.querySelectorAll<HTMLElement>('h1, h2, h3, p')).slice(0, textLimit);
+          if (textTargets.length > 0) {
+            gsap.fromTo(
+              textTargets,
+              {
+                autoAlpha: 0,
+                x: variant.textX * offsetScale,
+                y: -Math.abs(variant.textY) * offsetScale,
+              },
+              {
+                autoAlpha: 1,
+                x: 0,
+                y: 0,
+                duration: textDuration,
+                ease: 'power3.out',
+                stagger: textStagger,
+                ...(playNow
+                  ? {}
+                  : {
+                      scrollTrigger: {
+                        trigger: target,
+                        start: triggerStartText,
+                        once: true,
+                      },
+                    }),
+              }
+            );
+          }
 
-          if (!isLiteMode) {
-            const textTargets = Array.from(target.querySelectorAll<HTMLElement>('h1, h2, h3, p')).slice(0, textLimit);
-            if (textTargets.length > 0) {
-              gsap.fromTo(
-                textTargets,
-                {
-                  autoAlpha: 0,
-                  x: variant.textX * offsetScale,
-                  y: -Math.abs(variant.textY) * offsetScale,
-                },
-                {
-                  autoAlpha: 1,
-                  x: 0,
-                  y: 0,
-                  duration: textDuration,
-                  ease: 'power3.out',
-                  stagger: textStagger,
-                  ...(playNow
-                    ? {}
-                    : {
-                        scrollTrigger: {
-                          trigger: target,
-                          start: triggerStartText,
-                          once: true,
-                        },
-                      }),
-                }
-              );
-            }
+          const cardTargets = Array.from(
+            target.querySelectorAll<HTMLElement>('article, figure, li, button, input, textarea, select, [data-anim-card]')
+          ).slice(0, cardLimit);
 
-            const cardTargets = Array.from(
-              target.querySelectorAll<HTMLElement>('article, figure, li, button, input, textarea, select, [data-anim-card]')
-            ).slice(0, cardLimit);
-
-            if (cardTargets.length > 0) {
-              gsap.fromTo(
-                cardTargets,
-                {
-                  autoAlpha: 0,
-                  x: variant.cardX * offsetScale,
-                  y: variant.cardY * offsetScale,
-                },
-                {
-                  autoAlpha: 1,
-                  x: 0,
-                  y: 0,
-                  duration: cardDuration,
-                  ease: 'power2.out',
-                  stagger: cardStagger,
-                  ...(playNow
-                    ? {}
-                    : {
-                        scrollTrigger: {
-                          trigger: target,
-                          start: triggerStartCard,
-                          once: true,
-                        },
-                      }),
-                }
-              );
-            }
+          if (cardTargets.length > 0) {
+            gsap.fromTo(
+              cardTargets,
+              {
+                autoAlpha: 0,
+                x: variant.cardX * offsetScale,
+                y: variant.cardY * offsetScale,
+              },
+              {
+                autoAlpha: 1,
+                x: 0,
+                y: 0,
+                duration: cardDuration,
+                ease: 'power2.out',
+                stagger: cardStagger,
+                ...(playNow
+                  ? {}
+                  : {
+                      scrollTrigger: {
+                        trigger: target,
+                        start: triggerStartCard,
+                        once: true,
+                      },
+                    }),
+              }
+            );
           }
         });
 
