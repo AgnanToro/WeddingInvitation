@@ -29,6 +29,9 @@ export default function ScrollAnimations({ active }: ScrollAnimationsProps) {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
+    const isLiteMode =
+      window.matchMedia('(max-width: 768px)').matches || window.matchMedia('(pointer: coarse)').matches;
+
     let isUnmounted = false;
     let cleanupGsap: (() => void) | undefined;
 
@@ -52,24 +55,63 @@ export default function ScrollAnimations({ active }: ScrollAnimationsProps) {
           const variant = motionVariants[variantName] ?? motionVariants['soft-up'];
           const playNow = shouldPlayImmediately(target);
 
-          const textTargets = Array.from(target.querySelectorAll<HTMLElement>('h1, h2, h3, p')).slice(0, 10);
+          const offsetScale = isLiteMode ? 0.45 : 1;
+          const textLimit = isLiteMode ? 4 : 10;
+          const cardLimit = isLiteMode ? 5 : 14;
+          const textDuration = isLiteMode ? 0.65 : 1.05;
+          const cardDuration = isLiteMode ? 0.7 : 1.1;
+          const textStagger = isLiteMode ? 0.06 : 0.1;
+          const cardStagger = isLiteMode ? 0.05 : 0.08;
+          const triggerStartText = isLiteMode ? 'top 88%' : 'top 83%';
+          const triggerStartCard = isLiteMode ? 'top 90%' : 'top 86%';
+
+          gsap.fromTo(
+            target,
+            {
+              autoAlpha: 0,
+              x: variant.sectionX * offsetScale,
+              y: variant.sectionY * offsetScale,
+            },
+            {
+              autoAlpha: 1,
+              x: 0,
+              y: 0,
+              duration: isLiteMode ? 0.6 : 0.9,
+              ease: 'power2.out',
+              ...(playNow
+                ? {}
+                : {
+                    scrollTrigger: {
+                      trigger: target,
+                      start: 'top 88%',
+                      once: true,
+                    },
+                  }),
+            }
+          );
+
+          const textTargets = Array.from(target.querySelectorAll<HTMLElement>('h1, h2, h3, p')).slice(0, textLimit);
           if (textTargets.length > 0) {
             gsap.fromTo(
               textTargets,
-              { autoAlpha: 0, x: variant.textX, y: -Math.abs(variant.textY) },
+              {
+                autoAlpha: 0,
+                x: variant.textX * offsetScale,
+                y: -Math.abs(variant.textY) * offsetScale,
+              },
               {
                 autoAlpha: 1,
                 x: 0,
                 y: 0,
-                duration: 1.05,
+                duration: textDuration,
                 ease: 'power3.out',
-                stagger: 0.1,
+                stagger: textStagger,
                 ...(playNow
                   ? {}
                   : {
                       scrollTrigger: {
                         trigger: target,
-                        start: 'top 83%',
+                        start: triggerStartText,
                         once: true,
                       },
                     }),
@@ -79,25 +121,29 @@ export default function ScrollAnimations({ active }: ScrollAnimationsProps) {
 
           const cardTargets = Array.from(
             target.querySelectorAll<HTMLElement>('article, figure, li, button, input, textarea, select, [data-anim-card]')
-          ).slice(0, 14);
+          ).slice(0, cardLimit);
 
           if (cardTargets.length > 0) {
             gsap.fromTo(
               cardTargets,
-              { autoAlpha: 0, x: variant.cardX, y: variant.cardY },
+              {
+                autoAlpha: 0,
+                x: variant.cardX * offsetScale,
+                y: variant.cardY * offsetScale,
+              },
               {
                 autoAlpha: 1,
                 x: 0,
                 y: 0,
-                duration: 1.1,
+                duration: cardDuration,
                 ease: 'power2.out',
-                stagger: 0.08,
+                stagger: cardStagger,
                 ...(playNow
                   ? {}
                   : {
                       scrollTrigger: {
                         trigger: target,
-                        start: 'top 86%',
+                        start: triggerStartCard,
                         once: true,
                       },
                     }),

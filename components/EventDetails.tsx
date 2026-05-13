@@ -83,7 +83,7 @@ function EventCard({ data }: { data: EventCardData }) {
 
   const sidebar = (
     <div
-      className={`flex w-[3.25rem] shrink-0 flex-col items-center justify-center py-5 sm:w-16 ${displayFont.className}`}
+      className={`flex w-13 shrink-0 flex-col items-center justify-center py-5 sm:w-16 ${displayFont.className}`}
       style={{ backgroundColor: accentColor }}
     >
       <p
@@ -109,7 +109,7 @@ function EventCard({ data }: { data: EventCardData }) {
         <p className="mt-0.5 text-[1.08rem] font-bold leading-snug text-[#4f5660] sm:text-[1.15rem]">
           {data.venueLine}
         </p>
-        <p className="mt-1 max-w-[300px] text-[0.92rem] font-medium leading-snug text-[#6f7178] sm:text-[0.98rem]">
+        <p className="mt-1 max-w-75 text-[0.92rem] font-medium leading-snug text-[#6f7178] sm:text-[0.98rem]">
           {data.addressLine}
         </p>
       </div>
@@ -131,7 +131,7 @@ function EventCard({ data }: { data: EventCardData }) {
       className="event-card mx-auto w-full overflow-hidden rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.14)]"
       style={{ maxWidth: '520px' }}
     >
-      <div className="relative aspect-[5/3] w-full overflow-hidden rounded-t-2xl sm:aspect-[16/9]">
+      <div className="relative aspect-5/3 w-full overflow-hidden rounded-t-2xl sm:aspect-video">
         <div className="event-photo-viewport relative h-full w-full overflow-hidden">
           <div className={`event-photo-track ${trackClass}`} aria-hidden>
             {data.slideDirection === 'left' ? (

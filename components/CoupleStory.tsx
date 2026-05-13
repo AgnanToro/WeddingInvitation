@@ -18,6 +18,16 @@ export default function CoupleStory() {
       >
         <p className={`${displayFont.className} text-center text-[#4f5660] text-[1.6rem] sm:text-[2rem] font-medium leading-none mb-8 sm:mb-10`}>Our Pray</p>
 
+        <div
+          className="mx-auto mb-10 sm:mb-12 rounded-3xl border border-white/70 bg-white/90 px-6 py-6 text-center shadow-[0_16px_38px_rgba(109,89,52,0.16)]"
+          style={{ maxWidth: '640px' }}
+          data-anim-card
+        >
+          <p className={`${displayFont.className} text-[1.05rem] sm:text-[1.15rem] italic leading-relaxed text-[#5c6068]`}>
+            &quot;I love you. I am who I am because of you. You are every reason, every hope, and every dream I&apos;ve ever had, and no matter what happens to us in the future, everyday we are together is the greatest day of my life. I will always be yours.&quot;
+          </p>
+        </div>
+
         <article
           className="relative w-full mx-auto mb-10 sm:mb-14 pr-11 sm:pr-0"
           style={{ maxWidth: '600px' }}

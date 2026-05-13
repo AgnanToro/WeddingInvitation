@@ -3,9 +3,9 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-lg mb-4 italic">
-          "Dan Allah menjadikan bagi kamu pasangan (suami atau istri) dari jenis kamu sendiri 
-          dan menjadikan untuk kamu dari pasanganmu anak-anak dan cucu-cucu, 
-          dan memberi kamu rezeki dari yang baik."
+          &quot;Dan Allah menjadikan bagi kamu pasangan (suami atau istri) dari jenis kamu sendiri
+          dan menjadikan untuk kamu dari pasanganmu anak-anak dan cucu-cucu,
+          dan memberi kamu rezeki dari yang baik.&quot;
         </p>
         <p className="text-gray-400 mb-8">Q.S An-Nahl: 72</p>
         
