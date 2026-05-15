@@ -57,6 +57,38 @@ body {
   opacity: 1 !important;
 }
 
+/* ─── Scroll Animations (CSS + IntersectionObserver) ─────────────────────────
+   .sa-text / .sa-card  = initial state (elemen sudah ada di DOM, tapi belum visible)
+   .sa-visible          = ditambahkan JS saat elemen masuk viewport → trigger transisi
+
+   PENTING: default tanpa .sa-text / .sa-card = elemen TETAP TERLIHAT normal.
+   Jadi saat JS belum jalan atau disabled, konten tidak hilang.
+──────────────────────────────────────────────────────────────────────────── */
+.sa-text,
+.sa-card {
+  opacity: 0;
+  transform: translate3d(var(--sa-x, 0px), var(--sa-y, 0px), 0);
+  will-change: opacity, transform;
+  transition:
+    opacity   var(--sa-dur, 700ms) cubic-bezier(0.22, 1, 0.36, 1) var(--sa-delay, 0ms),
+    transform var(--sa-dur, 700ms) cubic-bezier(0.22, 1, 0.36, 1) var(--sa-delay, 0ms);
+}
+
+.sa-text.sa-visible,
+.sa-card.sa-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-text,
+  .sa-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 [data-taos].taos-init {
   opacity: 0;
   transform: translate3d(0, 18px, 0);
