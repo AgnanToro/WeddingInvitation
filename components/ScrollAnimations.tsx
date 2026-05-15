@@ -35,6 +35,13 @@ export default function ScrollAnimations({ active }: ScrollAnimationsProps) {
     let isUnmounted = false;
     let cleanupGsap: (() => void) | undefined;
 
+    // Tandai semua section agar elemen tetap visible sebelum GSAP siap
+    // Ini mencegah white screen / konten hilang saat GSAP belum load
+    const allSections = document.querySelectorAll<HTMLElement>('[data-scroll-section]');
+    allSections.forEach((section) => {
+      section.setAttribute('data-gsap-pending', '1');
+    });
+
     void (async () => {
       const [{ gsap }, { ScrollTrigger }] = await Promise.all([import('gsap'), import('gsap/ScrollTrigger')]);
       if (isUnmounted) return;
@@ -51,19 +58,22 @@ export default function ScrollAnimations({ active }: ScrollAnimationsProps) {
         };
 
         sectionTargets.forEach((target) => {
+          target.removeAttribute('data-gsap-pending');
+
           const variantName = target.dataset.motion ?? 'soft-up';
           const variant = motionVariants[variantName] ?? motionVariants['soft-up'];
           const playNow = shouldPlayImmediately(target);
 
-          const offsetScale = isLiteMode ? 0.45 : 1;
-          const textLimit = isLiteMode ? 60 : 20;
-          const cardLimit = isLiteMode ? 30 : 16;
-          const textDuration = isLiteMode ? 0.55 : 1.05;
-          const cardDuration = isLiteMode ? 0.6 : 1.1;
-          const textStagger = isLiteMode ? 0.04 : 0.1;
-          const cardStagger = isLiteMode ? 0.04 : 0.08;
-          const triggerStartText = isLiteMode ? 'top 98%' : 'top 92%';
-          const triggerStartCard = isLiteMode ? 'top 98%' : 'top 94%';
+          // Di HP (lite mode): offset lebih kecil, durasi lebih pendek, stagger lebih cepat
+          const offsetScale = isLiteMode ? 0.35 : 1;
+          const textLimit = isLiteMode ? 12 : 20;
+          const cardLimit = isLiteMode ? 8 : 16;
+          const textDuration = isLiteMode ? 0.45 : 1.05;
+          const cardDuration = isLiteMode ? 0.5 : 1.1;
+          const textStagger = isLiteMode ? 0.03 : 0.1;
+          const cardStagger = isLiteMode ? 0.03 : 0.08;
+          const triggerStartText = isLiteMode ? 'top 99%' : 'top 92%';
+          const triggerStartCard = isLiteMode ? 'top 99%' : 'top 94%';
 
           const textTargets = Array.from(target.querySelectorAll<HTMLElement>('h1, h2, h3, p')).slice(0, textLimit);
           if (textTargets.length > 0) {
@@ -94,8 +104,10 @@ export default function ScrollAnimations({ active }: ScrollAnimationsProps) {
             );
           }
 
+          // Hanya animasi elemen yang memang "card" — hindari li/button/input
+          // karena terlalu banyak dan menyebabkan lag di HP
           const cardTargets = Array.from(
-            target.querySelectorAll<HTMLElement>('article, figure, li, button, input, textarea, select, [data-anim-card]')
+            target.querySelectorAll<HTMLElement>('article, figure, [data-anim-card]')
           ).slice(0, cardLimit);
 
           if (cardTargets.length > 0) {
@@ -127,6 +139,7 @@ export default function ScrollAnimations({ active }: ScrollAnimationsProps) {
           }
         });
 
+        // Delay refresh agar layout sudah stabil sebelum ScrollTrigger menghitung posisi
         ScrollTrigger.refresh();
       });
 
@@ -137,6 +150,10 @@ export default function ScrollAnimations({ active }: ScrollAnimationsProps) {
 
     return () => {
       isUnmounted = true;
+      // Bersihkan atribut pending jika unmount sebelum GSAP selesai load
+      document.querySelectorAll('[data-gsap-pending]').forEach((el) => {
+        el.removeAttribute('data-gsap-pending');
+      });
       cleanupGsap?.();
     };
   }, [active]);

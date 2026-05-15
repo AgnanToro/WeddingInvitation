@@ -26,14 +26,14 @@ body {
 }
 
 .invite-open-enter {
-  animation: inviteOpenReveal 5000ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: inviteOpenReveal 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
   will-change: transform, filter;
 }
 
 
 @keyframes inviteOpenReveal {
   from {
-    opacity: 1;
+    opacity: 0;
     transform: translate3d(0, 18px, 0);
     filter: blur(0.8px);
   }
@@ -42,6 +42,19 @@ body {
     transform: translate3d(0, 0, 0);
     filter: blur(0);
   }
+}
+
+/* Pastikan elemen tetap visible saat GSAP belum selesai load.
+   GSAP akan override visibility ini setelah siap. */
+[data-gsap-pending] h1,
+[data-gsap-pending] h2,
+[data-gsap-pending] h3,
+[data-gsap-pending] p,
+[data-gsap-pending] article,
+[data-gsap-pending] figure,
+[data-gsap-pending] [data-anim-card] {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 [data-taos].taos-init {
